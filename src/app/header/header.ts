@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,17 @@ import { RouterLink } from '@angular/router';
 })
 export class Header implements AfterViewInit {
   @ViewChild('header') headerElement!: ElementRef;
+  isHomeRoute: boolean = false;
 
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+    // Listen to route changes
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.isHomeRoute = this.router.url === '/'; // Adjust '/' to your home route path if different
+      });
+  }
+  
   ngAfterViewInit(): void {
     /**
  * navbar toggle
@@ -53,20 +64,20 @@ export class Header implements AfterViewInit {
      * header & go-top-btn active
      * when window scroll down to 400px
      */
-    if (typeof window !== 'undefined') {
-      const header = this.headerElement.nativeElement;
+    // if (typeof window !== 'undefined') {
+    //   const header = this.headerElement.nativeElement;
       // const goTopBtn = this.headerElement.nativeElement.querySelector("[data-go-top]");
   
-      window.addEventListener("scroll", function () {
-        if (window.scrollY >= 400) {
-          header?.classList.add("active");
-          // goTopBtn?.classList.add("active");
-        } else {
-          header?.classList.remove("active");
-          // goTopBtn?.classList.remove("active");
-        }
-      });
-    }
+      // window.addEventListener("scroll", function () {
+      //   if (window.scrollY >= 400) {
+      //     header?.classList.add("active");
+      //     // goTopBtn?.classList.add("active");
+      //   } else {
+      //     header?.classList.remove("active");
+      //     // goTopBtn?.classList.remove("active");
+      //   }
+      // });
+    // }
   }
 
 }
