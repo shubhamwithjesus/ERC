@@ -10,7 +10,7 @@ import { Gallery } from './gallery/gallery';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Footer, Header, Meetings, Doctrine, Gallery],
+  imports: [RouterOutlet, Footer, Header, Meetings, Doctrine, Gallery, MatIconModule],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

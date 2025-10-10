@@ -53,19 +53,20 @@ export class Header implements AfterViewInit {
      * header & go-top-btn active
      * when window scroll down to 400px
      */
-
-    const header = this.headerElement.nativeElement.querySelector("[data-header]");
-    const goTopBtn = this.headerElement.nativeElement.querySelector("[data-go-top]");
-
-    // window.addEventListener("scroll", function () {
-    //   if (window.scrollY >= 400) {
-    //     header?.classList.add("active");
-    //     goTopBtn?.classList.add("active");
-    //   } else {
-    //     header?.classList.remove("active");
-    //     goTopBtn?.classList.remove("active");
-    //   }
-    // });
+    if (typeof window !== 'undefined') {
+      const header = this.headerElement.nativeElement;
+      const goTopBtn = this.headerElement.nativeElement.querySelector("[data-go-top]");
+  
+      window.addEventListener("scroll", function () {
+        if (window.scrollY >= 400) {
+          header?.classList.add("active");
+          goTopBtn?.classList.add("active");
+        } else {
+          header?.classList.remove("active");
+          goTopBtn?.classList.remove("active");
+        }
+      });
+    }
   }
 
 }

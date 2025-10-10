@@ -1,83 +1,71 @@
-<!-- <nav>
-    <ul>
-        <li><a routerLink="">Home</a></li>
-        <li><a routerLink="doctrine">Doctrine</a></li>
-        <li><a routerLink="meetings">Meetings</a></li>
-        <li><a routerLink="sermons">Sermons</a></li>
-        <li><a routerLink="publications">Publications</a></li>
-        <li><a routerLink="testimonies">Testimonies</a></li>
-        <li><a routerLink="gallery">Gallery</a></li>
-    </ul>
-  </nav> -->
+<header class="header" data-header #header>
+  <div class="container">
 
-  <header class="header" data-header #header>
-    <div class="container">
+    <div class="overlay" data-overlay></div>
 
-      <div class="overlay" data-overlay></div>
+    <a routerLink="">
+      <h1 class="logo">Exodus</h1>
+    </a>
 
-      <a routerLink="">
-        <h1 class="logo">ERC</h1>
-      </a>
+    <nav class="navbar" data-navbar>
 
-      <nav class="navbar" data-navbar>
+      <div class="navbar-top">
+        <a routerLink="" class="logo">Exodus</a>
 
-        <div class="navbar-top">
-          <a routerLink="" class="logo">ERC</a>
+        <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
 
-          <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-            <mat-icon>close</mat-icon>
-          </button>
-        </div>
+      <ul class="navbar-list">
 
-        <ul class="navbar-list">
+        <li class="navbar-item">
+          <a routerLink="" class="navbar-link" data-navbar-link>Home</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="" class="navbar-link" data-navbar-link>Home</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="doctrine" class="navbar-link" data-navbar-link>Doctrine</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="doctrine" class="navbar-link" data-navbar-link>Doctrine</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="meetings" class="navbar-link" data-navbar-link>Meetings</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="meetings" class="navbar-link" data-navbar-link>Meetings</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="sermons" class="navbar-link" data-navbar-link>Sermons</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="sermons" class="navbar-link" data-navbar-link>Sermons</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="publications" class="navbar-link" data-navbar-link>Publications</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="publications" class="navbar-link" data-navbar-link>Publications</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="testimonies" class="navbar-link" data-navbar-link>Testimonies</a>
+        </li>
 
-          <li class="navbar-item">
-            <a routerLink="testimonies" class="navbar-link" data-navbar-link>Testimonies</a>
-          </li>
+        <li class="navbar-item">
+          <a routerLink="gallery" class="navbar-link" data-navbar-link>Gallery</a>
+        </li>
+      </ul>
 
-          <li class="navbar-item">
-            <a routerLink="gallery" class="navbar-link" data-navbar-link>Gallery</a>
-          </li>
-        </ul>
+    </nav>
 
-      </nav>
+    <a routerLink="" class="btn">
+      <mat-icon>contact_phone</mat-icon>
+      <span>Contact Us</span>
+    </a>
 
-      <a routerLink="" class="btn">
-        <mat-icon>contact_phone</mat-icon>
-        <span>Contact Us</span>
-      </a>
+    <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
+      <mat-icon>menu</mat-icon>
+    </button>
 
-      <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-        <mat-icon>menu</mat-icon>
-      </button>
-
-    </div>
-  </header>
-
-    <!-- 
+  </div>
+  <!-- 
     - #GO TO TOP
   -->
 
-  <a href="#top" class="go-top  active" aria-label="Go To Top" data-go-top>
-    <mat-icon>arrow_upward_alt</mat-icon>
-  </a>
+<a href="#top" class="go-top  active" aria-label="Go To Top" data-go-top>
+  <mat-icon>arrow_upward_alt</mat-icon>
+</a>
+</header>
+
