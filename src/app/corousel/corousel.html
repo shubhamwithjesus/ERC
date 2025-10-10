@@ -1,0 +1,26 @@
+<div class="carousel">
+  <button class="nav left" (click)="prev()" aria-label="Previous">&#10094;</button>
+
+  <img
+    [src]="images[currentIndex]"
+    class="carousel-image"
+    alt="Carousel image"
+    loading="lazy"
+  />
+
+  <button class="nav right" (click)="next()" aria-label="Next">&#10095;</button>
+</div>
+
+<div class="dots" role="navigation" aria-label="Carousel navigation">
+    @for (img of images; let i = $index; track img) {
+        <span
+        class="dot"
+        [class.active]="i === currentIndex"
+        (click)="currentIndex = i"
+        role="button"
+        tabindex="0"
+        aria-label="Go to slide {{ i + 1 }}"
+      ></span>
+    }
+
+</div>
