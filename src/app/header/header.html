@@ -10,7 +10,7 @@
     </ul>
   </nav> -->
 
-  <header class="header" data-header>
+  <header class="header" data-header #header>
     <div class="container">
 
       <div class="overlay" data-overlay></div>
@@ -25,7 +25,7 @@
           <a routerLink="" class="logo">ERC</a>
 
           <button class="nav-close-btn" aria-label="Close Menu" data-nav-close-btn>
-            <mat-icon>home</mat-icon>
+            <mat-icon>close</mat-icon>
           </button>
         </div>
 
@@ -63,13 +63,21 @@
       </nav>
 
       <a routerLink="" class="btn">
-        <mat-icon>home</mat-icon>
-        <span>Get A Quote</span>
+        <mat-icon>contact_phone</mat-icon>
+        <span>Contact Us</span>
       </a>
 
       <button class="nav-open-btn" aria-label="Open Menu" data-nav-open-btn>
-        <mat-icon>home</mat-icon>
+        <mat-icon>menu</mat-icon>
       </button>
 
     </div>
   </header>
+
+    <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top  active" aria-label="Go To Top" data-go-top>
+    <mat-icon>arrow_upward_alt</mat-icon>
+  </a>
