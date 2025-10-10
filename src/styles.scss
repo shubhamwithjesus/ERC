@@ -703,7 +703,7 @@ body {
 }
 
 .footer-top {
-  // background-image: url("../images/footer-bg.png"), var(--gradient-1);
+  background-image: var(--gradient-1);
   background-repeat: no-repeat;
   background-size: auto, 200%;
   background-position: center, center;
@@ -1209,7 +1209,7 @@ body {
    */
 
   .footer-top .container {
-    grid-template-columns: 1fr 0.5fr 0.7fr 0.5fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 
   .footer-brand {
