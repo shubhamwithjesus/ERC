@@ -1,0 +1,43 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    color: var(--st-patricks-blue);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.card-content-container {
+    padding: 1em;
+}
+.card-header{
+    font-size: var(--fs-4);
+    font-weight: bold;
+    margin-bottom: 0.1em;
+}
+.card-subtitle{
+    font-size: var(--fs-6);
+    margin-bottom: 0.5em;
+}
+.card-description{
+   font-size: var(--fs-8);
+  /* Set a fixed line-height for consistent calculations */
+  line-height: 1.5em; 
+  /* Calculate max-height based on desired number of lines (e.g., 3 lines * 1.5em line-height) */
+  max-height: 4.5em; 
+  /* Hide any content that exceeds the max-height */
+  overflow: hidden; 
+  /* Display as a flexible box for line clamping */
+  display: -webkit-box; 
+  /* Limit the text to a specific number of lines */
+  -webkit-line-clamp: 3; 
+  /* Orient the box vertically */
+  -webkit-box-orient: vertical; 
+  /* Add ellipsis to the end of truncated text */
+  text-overflow: ellipsis; 
+}
+.read-more{
+    color: var(--winter-sky);
+}
