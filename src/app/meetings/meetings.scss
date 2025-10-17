@@ -1,0 +1,81 @@
+.meeting-corousel-container{
+    grid-column: 1/4;
+}
+/* Basic styling for the meeting list container */
+.meeting-list {
+    max-width: 960px;
+    /* Optional: Sets a maximum width for the list */
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Base card styling */
+.meeting-card {
+    background-color: #ffffff;
+    // border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: row;
+    /* Stacks items vertically by default on mobile */
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Styling for the meeting details section */
+.meeting-details {
+    margin-bottom: 1rem;
+}
+
+.meeting-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1em;
+    // color: #333;
+}
+
+.meeting-time,
+.meeting-location {
+    margin: 0.25rem 0;
+    font-size: 0.7em;
+    // color: #666;
+}
+
+/* Styling for the join link button */
+.join-link {
+    display: inline-block;
+    border: 0.1em solid var(--winter-sky);
+    color: var(--winter-sky);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: var(--transition-1);
+}
+
+.join-link:hover {
+    color: var(--white);
+    background-color: var(--winter-sky);
+}
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media screen and (min-width: 768px) {
+    .meeting-card {
+        flex-direction: row;
+        /* Arrange items horizontally on larger screens */
+        align-items: center;
+    }
+
+    .meeting-details {
+        margin-bottom: 0;
+    }
+
+    .meeting-actions {
+        min-width: 100px;
+        /* Ensures the button has enough space */
+        text-align: right;
+    }
+}
