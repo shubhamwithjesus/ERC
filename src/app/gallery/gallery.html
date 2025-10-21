@@ -3,7 +3,23 @@
     <div class="container">
 
         <h2 class="h2 section-title underline">Gallery</h2>
-
+        <!-- <div class="gallery-container"> -->
+            @for (item of images; let i = $index; track item) {
+                <div  class="gallery-item">
+                    <div class="image-wrapper">
+                      <img [src]="item.imageUrl" [alt]="item.title">
+                    </div>
+                
+                    <div class="item-details">
+                      <h3>{{ item.title }}</h3>
+                
+                      <p class="date">{{ getFormattedDate(item.date) }}</p>
+                
+                      </div>
+                  </div>
+            }
+ 
+          <!-- </div> -->
         <!-- <ul class="features-list">
 
             <li>
