@@ -1,25 +1,22 @@
-
 <section class="section features first-section" id="features">
     <div class="container">
 
         <h2 class="h2 section-title underline">Gallery</h2>
         <!-- <div class="gallery-container"> -->
-            @for (item of images; let i = $index; track item) {
-                <div  class="gallery-item">
-                    <div class="image-wrapper">
-                      <img [src]="item.imageUrl" [alt]="item.title">
-                    </div>
-                
-                    <div class="item-details">
-                      <h3>{{ item.title }}</h3>
-                
-                      <p class="date">{{ getFormattedDate(item.date) }}</p>
-                
-                      </div>
-                  </div>
-            }
- 
-          <!-- </div> -->
+        @for (item of images; let i = $index; track item) {
+        <div class="gallery-item">
+            <div class="image-wrapper" (click)="openImageModal(item)">
+                <img [src]="item.imageUrl" [alt]="item.title">
+            </div>
+
+            <div class="item-details">
+                <h3>{{ item.title }}</h3>
+                <p class="date">{{ getFormattedDate(item.date) }}</p>
+            </div>
+        </div>
+        }
+
+        <!-- </div> -->
         <!-- <ul class="features-list">
 
             <li>
@@ -127,4 +124,18 @@
         </ul> -->
 
     </div>
+    @if(isModalOpen) {
+    <div class="modal-overlay" (click)="closeImageModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+            <button class="close-button" (click)="closeImageModal()">X</button>
+            <img [src]="selectedImage?.imageUrl" [alt]="selectedImage?.title">
+            <div class="modal-details">
+                <h3>{{ selectedImage?.title }}</h3>
+                @if(selectedImage?.date) {
+                <p class="date">{{ getFormattedDate(selectedImage.date) }}</p>
+                }
+            </div>
+        </div>
+    </div>
+    }
 </section>

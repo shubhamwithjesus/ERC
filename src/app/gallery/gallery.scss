@@ -1,19 +1,17 @@
+// Existing styles for gallery-container, gallery-item, etc. go here.
+// I'm only showing the NEW modal styles and the adjusted hover effect.
+
 .gallery-container {
     display: grid;
-    // Default for small screens: 1 column
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     padding: 20px;
   
-    // Medium screens (e.g., tablets)
     @media (min-width: 600px) {
-      // 2 columns
       grid-template-columns: repeat(2, 1fr);
     }
   
-    // Large screens (e.g., desktops)
     @media (min-width: 1024px) {
-      // 3 or 4 columns
       grid-template-columns: repeat(3, 1fr);
     }
   }
@@ -24,6 +22,7 @@
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    cursor: pointer; // Indicate that the item is clickable
   
     &:hover {
       transform: translateY(-5px);
@@ -31,10 +30,10 @@
   }
   
   .image-wrapper {
-    // Maintains a common aspect ratio (e.g., 4:3 or 1:1)
     width: 100%;
-    padding-top: 75%; /* 4:3 Aspect Ratio (75%) */
+    padding-top: 75%; /* 4:3 Aspect Ratio */
     position: relative;
+    overflow: hidden;
   
     img {
       position: absolute;
@@ -42,7 +41,12 @@
       left: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover; /* Ensures the image covers the area without distortion */
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  
+    &:hover img {
+      transform: scale(1.03); /* Slightly less dramatic hover scale since it expands on click */
     }
   }
   
@@ -59,5 +63,103 @@
       margin: 0;
       font-size: 0.9em;
       color: #666;
+    }
+  }
+  
+  
+  /* --- NEW STYLES FOR FULL-SCREEN MODAL --- */
+  .modal-overlay {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Dark semi-transparent background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of everything else */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect to the background */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+  }
+  
+  .modal-content {
+    position: relative;
+    max-width: 90vw; /* Maximum width of the modal content */
+    max-height: 90vh; /* Maximum height of the modal content */
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Hide anything that overflows */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex; /* Use flex to arrange image and details */
+    flex-direction: column;
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    max-height: calc(90vh - 100px); /* Adjust based on details height, roughly */
+    object-fit: contain; /* Ensure the whole image is visible without cropping */
+    display: block; /* Remove extra space below image */
+    margin: auto; /* Center image if it's smaller than max-width/height */
+  }
+  
+  .modal-details {
+    padding: 15px 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee;
+    text-align: center;
+  
+    h3 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+  
+    p.date {
+      margin: 0;
+      font-size: 0.85em;
+      color: #777;
+    }
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001; /* Ensure button is above the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  
+  // Responsive adjustments for modal if needed (e.g., smaller padding on mobile)
+  @media (max-width: 768px) {
+    .modal-content {
+      max-width: 95vw;
+      max-height: 95vh;
+    }
+  
+    .modal-content img {
+      max-height: calc(95vh - 80px); /* Adjust for smaller details section */
+    }
+  
+    .close-button {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      font-size: 1em;
     }
   }
