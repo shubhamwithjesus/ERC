@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Corousel {
   images = [
-    'images/blog-1.jpg',
+    'images/erc/church_drone_img.png',
     'images/blog-2.jpg'
   ];
 
