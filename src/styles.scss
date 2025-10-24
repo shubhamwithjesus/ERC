@@ -503,10 +503,10 @@ body {
 }
 
 .service-card .card-icon {
-  background-image: url("./app/images/service-banner-pattern.png");
+  // background-image: url("./app/images/service-banner-pattern.png");
   background-repeat: no-repeat;
   background-size: contain;
-  background-color: hsla(335, 87%, 53%, 0.12);
+  // background-color: hsla(335, 87%, 53%, 0.12);
   aspect-ratio: 1 / 1;
   max-width: 165px;
   display: grid;
@@ -516,7 +516,7 @@ body {
 }
 
 .service-card:hover .card-icon {
-  background-color: var(--winter-sky);
+  // background-color: var(--winter-sky);
 }
 
 .service-card .card-icon ion-icon {
@@ -527,7 +527,7 @@ body {
 }
 
 .service-card:hover .card-icon ion-icon {
-  color: var(--white);
+  // color: var(--white);
 }
 
 .service-card .title {
